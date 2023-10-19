@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Javascript_lab</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+
+</style>
+
+<body>
+  <script>
+    /*----------- PART 1 --------------*/
+
+    /*Question 1*/
+    let numOfCourses = prompt("How many courses did you finish?", 0);
+    numOfCourses = parseInt(numOfCourses);
+
+    /*Question 2*/
+    if (isNaN(numOfCourses)) {
+      document.write("Invalid Input!");
+    }
+    else {
+
+      /*Question 3*/
+      let courseMarks = [];
+
+      /*Question 4*/
+      let index = 0;
+      while (index < numOfCourses) {
+        courseMarks[index] = parseFloat(prompt("Enter your mark for course" + " " + (index + 1)));
+        index++;
+      }
+
+      /*Question 5*/
+      for (let i = 0; i < numOfCourses; i++) {
+        document.write("<p>" + courseMarks[i] + "</p>");
+      }
+
+      /*----------- PART 2 --------------*/
+
+      /*Question 1*/
+      let sum = 0;
+
+      for (let i of courseMarks) {
+        sum += i;
+      }
+
+      let average = sum / courseMarks.length;
+
+
+      /*----------- PART 3 --------------*/
+
+      /*Question 1*/
+      if (average >= 90 && average <= 100) {
+        document.write("Your final average is " + average.toFixed(2) + ". Your grade is A+");
+      } else if (average >= 80 && average <= 89) {
+        document.write("Your final average is " + average.toFixed(2) + ". Your grade is B");
+      } else if (average >= 70 && average <= 79) {
+        document.write("Your final average is " + average.toFixed(2) + ". Your grade is C");
+      } else if (average >= 60 && average <= 69) {
+        document.write("Your final average is " + average.toFixed(2) + ". Your grade is D");
+      } else if (average < 60) {
+        document.write("Your final average is " + average.toFixed(2) + ". Your grade is F");
+      } else {
+        document.write("Sorry, All the marks have to be from a minimum of 0 to a maximum of 100!");
+      }
+
+    }
+  </script>
+
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>
